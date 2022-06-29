@@ -11,6 +11,7 @@ export const Player = styled.div`
   background-color: ${COLORS.darkGray};
   height: 112px;
   width: 100%;
+  justify-content: center;
 `;
 
 export const Playe2r = styled.div``;
