@@ -43,7 +43,7 @@ const Player = () => {
   return (
     <S.Player>
       <audio id="audio">
-        <source src="https://cdn3.sefon.pro/prev/evaeTtEHM59t4kEZUBxKnw/1656563648/296/ANNA%20ASTI%20feat.%20%D0%A4%D0%B8%D0%BB%D0%B8%D0%BF%D0%BF%20%D0%9A%D0%B8%D1%80%D0%BA%D0%BE%D1%80%D0%BE%D0%B2%20-%20%D0%A5%D0%BE%D0%B1%D0%B1%D0%B8%20%28192kbps%29.mp3" />
+        <source src="http://localhost:5000/audio/f47ae7e2-aa3b-4597-a4a4-e5d24c714c77.mp3" />
         Your browser does not support the <code>audio</code> element.
       </audio>
       <Bar />

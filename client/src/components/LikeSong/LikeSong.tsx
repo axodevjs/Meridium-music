@@ -5,11 +5,12 @@ import EmptyHeart from "assets/svg/empty-heart.svg";
 
 interface Props {
   active: boolean;
+  margin?: string;
 }
 
-const LikeSong: FC<Props> = ({ active }) => {
+const LikeSong: FC<Props> = ({ active, margin }) => {
   return (
-    <S.LikeSong active={active}>
+    <S.LikeSong active={active} margin={margin}>
       {active ? (
         <img src={FilledHeart} alt="" />
       ) : (
