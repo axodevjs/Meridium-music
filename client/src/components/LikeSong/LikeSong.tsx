@@ -6,11 +6,12 @@ import EmptyHeart from "assets/svg/empty-heart.svg";
 interface Props {
   active: boolean;
   margin?: string;
+  onClick?: () => void;
 }
 
-const LikeSong: FC<Props> = ({ active, margin }) => {
+const LikeSong: FC<Props> = ({ active, margin, onClick }) => {
   return (
-    <S.LikeSong active={active} margin={margin}>
+    <S.LikeSong onClick={onClick} active={active} margin={margin}>
       {active ? (
         <img src={FilledHeart} alt="" />
       ) : (

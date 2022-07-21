@@ -4,6 +4,8 @@ import Details from "./Details/Details";
 import { useEffect } from "react";
 import playerState from "../../store/playerState";
 import { observer } from "mobx-react-lite";
+import axios from "axios";
+import { API_URL } from "config.ts";
 
 const Player = () => {
   useEffect(() => {
@@ -21,6 +23,10 @@ const Player = () => {
     audio.addEventListener("loadeddata", setAudioData);
 
     audio.addEventListener("timeupdate", setAudioTime);
+
+    audio.addEventListener("ended", async function () {
+      await axios.post(`${API_URL}/tracks/listen/${playerState.id}`);
+    });
 
     // React state listeners: update DOM on React state changes
     playerState.playing ? audio.play() : audio.pause();
@@ -41,9 +47,9 @@ const Player = () => {
   });
 
   return (
-    <S.Player>
+    <S.Player show={playerState.audio === "" ? false : true}>
       <audio id="audio">
-        <source src="http://localhost:5000/audio/f47ae7e2-aa3b-4597-a4a4-e5d24c714c77.mp3" />
+        <source src={playerState.audio} />
         Your browser does not support the <code>audio</code> element.
       </audio>
       <Bar />

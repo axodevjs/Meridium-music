@@ -1,7 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { COLORS } from "../../utils/variables";
 
-export const Player = styled.div`
+interface PlayerProps {
+  show: boolean;
+}
+
+export const Player = styled.div<PlayerProps>`
   position: fixed;
   bottom: 0;
   left: 0;
@@ -12,6 +16,10 @@ export const Player = styled.div`
   height: 112px;
   width: 100%;
   justify-content: center;
-`;
 
-export const Playe2r = styled.div``;
+  ${({ show }) =>
+    !show &&
+    css`
+      display: none;
+    `}
+`;

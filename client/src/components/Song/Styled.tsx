@@ -47,6 +47,7 @@ export const Cover = styled.img`
   height: 54px;
 
   background: url(image.png);
+  background-color: #393939;
   border-radius: 12px;
   margin-left: 24px;
 `;

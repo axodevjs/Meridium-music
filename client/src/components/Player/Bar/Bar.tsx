@@ -14,10 +14,6 @@ const Bar: FC = () => {
   const currentPercentage =
     (playerState.currentTime / playerState.duration) * 100;
 
-  useEffect(() => {
-    console.log(currentPercentage);
-  }, [playerState.currentTime]);
-
   const calcClickedTime = (e) => {
     const clickPositionInPage = e.pageX;
     const bar = document.querySelector(".bar__progress") as HTMLElement;

@@ -14,8 +14,8 @@ const Header: FC = () => {
       case "/":
         setPageName("Home");
         break;
-      case "/albums":
-        setPageName("Albums");
+      case "/favorites":
+        setPageName("Favorite Tracks");
         break;
     }
   }, [pathname]);
